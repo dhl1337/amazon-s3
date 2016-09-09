@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../public'));
 
 // Upload Image Endpoints
-require('./routes/imageRoute.js')(app);
+require('./routes/ImageRoute.js')(app);
 
 app.listen(port, function () {
     console.log('Listening on port ' + port);
