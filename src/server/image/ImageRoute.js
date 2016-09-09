@@ -1,7 +1,7 @@
-var ImageController = require('/ImageController.js');
+import {getImages, uploadImage, deleteImage} from './ImageController';
 
 module.exports = function (app) {
-    app.get('/api/v1/images', ImageController.getImages);
-    app.post('/api/v1/images', ImageController.uploadImage);
-    app.post('/api/v1/images', ImageController.deleteImage);
+    app.get('/api/v1/images', getImages);
+    app.post('/api/v1/images', uploadImage);
+    app.post('/api/v1/images', deleteImage);
 };
