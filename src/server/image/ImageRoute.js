@@ -1,4 +1,4 @@
-var ImageController = require('../controllers/ImageController.js');
+var ImageController = require('/ImageController.js');
 
 module.exports = function (app) {
     app.get('/api/v1/images', ImageController.getImages);

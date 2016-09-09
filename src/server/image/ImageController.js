@@ -1,4 +1,4 @@
-var Image = require('../models/ImageModel.js'),
+var Image = require('ImageModel.js'),
     config = require('../configs/config.js'),
     AWS = require('aws-sdk');
 
