@@ -13,7 +13,6 @@ let port = config.port;
 let app = express();
 
 // Database
-mongoose.Promise = global.Promise;
 mongoose.connect(config.database.url);
 mongoose.connection.once('open', () => {
     console.log('Successfully connected to mongodb')

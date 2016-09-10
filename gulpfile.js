@@ -36,7 +36,7 @@ gulp.task('server', () => {
 });
 
 gulp.task('Build', ['public', 'html', 'css', 'server'], () => {
-    console.log('building all the stuff');
+    console.log('Building all the stuff');
 });
 
 gulp.task('default', () => {
