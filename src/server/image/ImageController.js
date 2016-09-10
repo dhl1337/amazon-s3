@@ -43,20 +43,14 @@ export function getImages (req, res) {
 
 export function deleteImage(req, res) {
     let params = { Bucket: BucketName, Key: req.body.key };
-    s3.deleteObject(params, (err, data) => {
+    s3.deleteObject(params, (err) => {
         if (err) {
             return res.send(err);
         } else {
-            let idToDelete = req.params.id;
             Image
-                .remove({_id: idToDelete}, err => {
-                    if (err) {
-                        return res.status(500).send('failed to delete');
-                    } else {
-                        return res.send('Successfully deleted record');
-                    }
+                .remove({_id: req.params.id}, (err) => {
+                    err ? res.status(500).json('failed to delete') : res.json('Successfully deleted record');
                 });
-            res.send(data);
         }
     });
 }

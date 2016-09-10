@@ -4,8 +4,9 @@
   "description": "",
   "main": "src/server/index.js",
   "scripts": {
+    "nodemon": "build/server/index.js",
     "dev": "nodemon --exec babel-node src/server/index.js",
-    "start": "babel-node --presets es2015 src/server/index.js"
+    "start": "babel-node --presets es2015 build/server/index.js"
   },
   "repository": {
     "type": "git",

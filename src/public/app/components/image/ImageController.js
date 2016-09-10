@@ -56,18 +56,18 @@
             }
         });
 
-        let uploadFile = (file) => {
-            let fileReader = new FileReader();
+        var uploadFile = (file) => {
+            var fileReader = new FileReader();
 
             fileReader.onload = (loaded) => {
                 //Once loaded, run this code
-                let fileread = loaded.target.result;
+                var fileread = loaded.target.result;
                 imageService.storeImage(fileread, fileName)
                     .then(() => {
                         getImages();
                         vm.uploadingVideo = false;
                     })
-                    .catch( (err) => {
+                    .catch(function (err) {
                         console.error(err);
                     });
             };

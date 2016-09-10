@@ -26,7 +26,6 @@ gulp.task('css', () => {
         .pipe(gulp.dest('./build/public'))
 });
 
-
 gulp.task('server', () => {
     return gulp
         .src('./src/server/**/*.js')
