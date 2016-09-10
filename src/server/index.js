@@ -1,10 +1,11 @@
 'use strict';
 
 // Dependencies
-import bodyParser from 'body-parser';
-import express from 'express';
-import expressSession from 'express-session';
-import mongoose from 'mongoose';
+const bodyParser = require('body-parser');
+const express = require('express');
+const expressSession = require('express-session');
+const mongoose = require('mongoose');
+
 import config from './configs/config';
 
 let port = config.port;

@@ -49,7 +49,7 @@ export function deleteImage(req, res) {
         } else {
             let idToDelete = req.params.id;
             Image
-                .remove({_id: idToDelete},(err) => {
+                .remove({_id: idToDelete}, err => {
                     err ? res.status(500).json('failed to delete') : res.json('Successfully deleted record');
                 });
             res.send(data);

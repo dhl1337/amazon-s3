@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="amazonS3">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 
+<ui-view></ui-view>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+
+<script src="app/app.module.js"></script>
+<script src="app/app.routes.js"></script>
+
+<script src="app/components/image/ImageController.js"></script>
+<script src="app/components/image/ImageService.js"></script>
 </body>
 </html>
