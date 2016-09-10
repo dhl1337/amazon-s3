@@ -1,11 +1,10 @@
 'use strict';
 
 // Dependencies
-const bodyParser = require('body-parser');
-const express = require('express');
-const expressSession = require('express-session');
-const mongoose = require('mongoose');
-
+import bodyParser from 'body-parser';
+import express from 'express';
+import expressSession from 'express-session';
+import mongoose from 'mongoose';
 import config from './configs/config';
 
 let port = config.port;
@@ -14,6 +13,7 @@ let port = config.port;
 let app = express();
 
 // Database
+mongoose.Promise = global.Promise;
 mongoose.connect(config.database.url);
 mongoose.connection.once('open', () => {
     console.log('Successfully connected to mongodb')

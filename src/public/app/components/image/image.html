@@ -1,1 +1,71 @@
-<h1>Image</h1>
+<header>
+    <title>Image</title>
+</header>
+<div class="ui container" id="imageContainer">
+    <h1 class="ui header">Images</h1>
+    <button id="addVideoBtn" class="ui green basic button" ng-click="imageCtrl.addImageModal()">
+        <i class="icon plus"></i>
+        Upload
+    </button>
+    <div class="ui segment" ng-show="imageCtrl.imageTable">
+        <div class="ui active dimmer" ng-show="imageCtrl.uploadingVideo">
+            <div class="ui text loader">Loading</div>
+        </div>
+        <table class="ui single line celled striped definition table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Url</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="image in imageCtrl.images">
+                <td class="ui center aligned collapsing">
+                    <button class="ui red icon button" ng-click="imageCtrl.deleteImageModal(image._id, image.title)">
+                        <i class="remove icon"></i>
+                    </button>
+                </td>
+                <td class="collapsing">{{image.title}}</td>
+                <td>{{image.url}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<div class="ui modal" id="addImageModal">
+    <i class="close icon" ng-click="imageCtrl.exitTipModal()"></i>
+    <div class="header">
+        Upload - Select File
+    </div>
+    <div class="content">
+        <div>
+            <label for="file" class="ui icon button">
+                <i class="file icon"></i>
+                Open File</label>
+            <form>
+                <input type="file" id="file" name="uploadfile" style="display:none" onchange="file_path_display.innerHTML=uploadfile.value" accept="image/*">
+            </form>
+            <br>
+            <span id="file_path_display"></span>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui approve button" ng-click="imageCtrl.addImage()">Submit</div>
+    </div>
+</div>
+<div class="ui modal" id="deleteImageModal">
+    <i class="close icon"></i>
+    <div class="header">
+        Are you sure?
+    </div>
+    <div class="content">
+        <div class="description">
+            Do you want to delete this video?
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui negative approve button" ng-click="imageCtrl.deleteImage()">Delete</div>
+    </div>
+</div>

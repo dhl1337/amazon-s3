@@ -2,25 +2,20 @@
 <html lang="en" ng-app="amazonS3">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/semantic.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Title</title>
 </head>
 <body>
 
 <ui-view></ui-view>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.4.7.min.js"></script>
 
-<script src="app/app.module.js"></script>
-<script src="app/app.routes.js"></script>
-
-<script src="app/components/image/ImageController.js"></script>
-<script src="app/components/image/ImageService.js"></script>
-
-<script src="app/components/pdf/PdfController.js"></script>
-<script src="app/components/pdf/PdfService.js"></script>
-
-<script src="app/components/video/VideoController.js"></script>
-<script src="app/components/video/VideoService.js"></script>
+<script src="build.js"></script>
 </body>
 </html>

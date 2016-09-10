@@ -20,6 +20,13 @@ gulp.task('html', () => {
         .pipe(gulp.dest('./build/public'))
 });
 
+gulp.task('css', () => {
+    return gulp
+        .src('./src/public/assets/**/*.css')
+        .pipe(gulp.dest('./build/public'))
+});
+
+
 gulp.task('server', () => {
     return gulp
         .src('./src/server/**/*.js')
@@ -29,7 +36,7 @@ gulp.task('server', () => {
         .pipe(gulp.dest('./build/server'))
 });
 
-gulp.task('Build', ['public', 'html', 'server'], () => {
+gulp.task('Build', ['public', 'html', 'css', 'server'], () => {
     console.log('building all the stuff');
 });
 

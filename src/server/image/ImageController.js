@@ -45,12 +45,16 @@ export function deleteImage(req, res) {
     let params = { Bucket: BucketName, Key: req.body.key };
     s3.deleteObject(params, (err, data) => {
         if (err) {
-            res.send(err);
+            return res.send(err);
         } else {
             let idToDelete = req.params.id;
             Image
                 .remove({_id: idToDelete}, err => {
-                    err ? res.status(500).json('failed to delete') : res.json('Successfully deleted record');
+                    if (err) {
+                        return res.status(500).send('failed to delete');
+                    } else {
+                        return res.send('Successfully deleted record');
+                    }
                 });
             res.send(data);
         }
